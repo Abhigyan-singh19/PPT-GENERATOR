@@ -22,8 +22,8 @@ st.sidebar.title("ENTER API-KEYS")
 
 
 # ======== Step 3 Load Api key===============
-GOOGLE_API_KEY = st.sidar.text_input("Google-API", type ="password")
-TAVILY_API_KEY = st.sidar.text_input("TAVILY-API", type ="password")
+GOOGLE_API_KEY = st.sidar.text_input("Google_API_KEY", type ="password")
+TAVILY_API_KEY = st.sidar.text_input("TAVILY_API_KEY", type ="password")
 
 # ============API VALIDATIONS=============
 ALL_API = [GOOGLE_API_KEY,TAVILY_API_KEY]
