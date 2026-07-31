@@ -43,7 +43,7 @@ model = ChatGoogleGenerativeAI(
                                           "gemini-3.5-flash-lite"])
                                 )
 else : 
-  st.sidebar.info["CHECK-API-KEYS")
+  st.sidebar.info["CHECK-API-KEYS"]
 
 
   #=========== back end code===============
@@ -108,11 +108,14 @@ def run_agent (leader_agent , query):
 
 #============== step 7 :- Agent Call===========
 # Learder_agent creation
-leader_agent = create_agent(
-    model = model,
-    tools = [search_latest_info,
-             generate_image
-             ])
+if all(ALL-API):
+  leader_agent = create_agent(
+      model = model,
+      tools = [search_latest_info,
+               generate_image]
+)
+else :
+   st.info("Pass-ALL-API-KEYS and Rerun")
 
 # =========== STEP 8 NAVBAR STREAMLIT==========
 tab1,tab2,tab3 = st.tabs(["Generate Image",
