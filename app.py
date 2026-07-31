@@ -41,9 +41,10 @@ model = ChatGoogleGenerativeAI(
                                           "gemini-2.5-flash-lite",
                                           "gemini-3.5-flash",
                                           "gemini-3.5-flash-lite"])
-                                )
-else : 
-  st.sidebar.info["CHECK-API-KEYS"]
+                              )
+                                
+  else:
+   st.sidebar.info("CHECK-API-KEYS")
 
 
   #=========== back end code===============
