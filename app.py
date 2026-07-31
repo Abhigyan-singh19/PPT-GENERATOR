@@ -26,27 +26,23 @@ GOOGLE_API_KEY = st.sidar.text_input("Google-API", type ="password")
 TAVILY_API_KEY = st.sidar.text_input("TAVILY-API", type ="password")
 
 # ============API VALIDATIONS=============
-ALL_API = [GOOGLE_API_KEY, TAVILY_API_KEY]
+ALL_API = [GOOGLE_API_KEY,TAVILY_API_KEY]
 
 if not all(ALL_API):
-  st.sidebar.error("MUST PASS ALL API-KEYS")
-
+  st.sidebar.error("MUST PASS ALL API KEYS")
 elif all(ALL_API):
-  st.sidebar.success("API-KEYS LOADED SUCCESSFULLY")
-  #MODEL LOAD
-model = ChatGoogleGenerativeAI(
-  google_api_key = GOOGLE_API_KEY,
-  model = st.sidebar.selectbox("Gemini-Model-Name",
-                               options = ["gemini-2.5-flash",
-                                          "gemini-2.5-flash-lite",
-                                          "gemini-3.5-flash",
-                                          "gemini-3.5-flash-lite"])
-                              )
-                                
-  else:
-   st.sidebar.info("CHECK-API-KEYS")
-
-
+  st.sidebar.success("API_KEY loaded")
+  #MODEL LOAD 
+  model = ChatGoogleGenerativeAI(
+    google_api_key = GOOGLE_API_KEY,
+    model = st.sidebar.selectbox("Gemini-Model-Name",
+                                 options = ["gemini-2.5-flash",
+                                            "gemini-2.5-flash-lite",
+                                            "gemini-3.5-flash",
+                                            "gemini-3.5-flash-lite"])
+  )
+else:
+  st.sidebar.info("check api keys")
   #=========== back end code===============
 
   # Search_latest_info using tavily
