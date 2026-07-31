@@ -126,10 +126,10 @@ if (user_input) and (leader_agent):
         try:
           img= generate_image(user_input)
           st.image(img)
-          except:
+        except:
               url = f"https://image.pollinations.ai/{img_prompt}"
-            time.sleep(4)
-        st.image(url)
+              time.sleep(4)
+              st.image(url)
   # TAB 2 CODE
   with tab2:
     if st.button("Generate Image", key = "Gen-Image"):
